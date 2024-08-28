@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador de Texto</title>
+    <meta charset="utf-8" />
+    <script src="criptografia.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body onload="Init()">
+    <header style="background-color: rgb(24, 23, 23); padding: 10px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="imagens/Vector.png"
+                    style="padding: 20px; background-color:rgb(253, 253, 253); margin-left: 50px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" />
+                <h1 style="color:rgb(253, 253, 253); display: inline-block; padding: 10px; margin-top: 10px;">Alura</h1>
+            </div>
+        </div>
+    </header>
+    <div class="col-sm-6" style="background-color:rgba(204, 204, 222, 0.87);">
+        <h1 style="color:rgb(0, 0, 0); text-align: center;">Decodificador de Texto</h1>
+        <img src="imagens/animate.svg"
+            style="align-items: center; margin-left: 25%; margin-right: 25%; margin-top: 5%; margin-bottom: 5%;" />
+        <h4 style="font-size: 20px; color:rgb(9, 10, 10); padding: 10px; text-align: center;">
+            Digite o texto que deseja criptografar ou descriptografar e clique no botão correspondente.
+            <h6 style="text-align:center">Somente letras minúsculas e sem acentuação.</h6>
+        </h4>
+        <input type="textarea" id="texto" name="texto" placeholder="Digite o texto aqui" onkeyup="validaTexto"
+            onkeydown="validaTexto" onchange="validaTexto"
+            style="width: 50%; margin-left: 25%; margin-right: 25%; margin-top: 5%; margin-bottom: 5%; height: 100px; font-size: 20px; font-style: italic; color:cornflowerblue; text-align: center; padding: 10px;" />
+        <div style="text-align: center; margin-bottom: 15%;">
+            <input class="btn btn-primary" type="button" value="Criptografar"
+                onclick="document.getElementById('resultado').innerHTML = criptografar(document.getElementById('texto').value);" />
+            <input class="btn btn-primary" type="button" value="Descriptografar"
+                onclick="document.getElementById('resultado').innerHTML = descriptografar(document.getElementById('texto').value);" />
+            <input class="btn btn" onClick="document.getElementById('texto').value = ''" type="button" value="Limpar" />
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <p style="font-size: 20px; font-style: italic; color:cornflowerblue; text-align: center; padding: 10px;">
+            Resultado:</p>
+        <div id="resultado"
+            style="font-size: 20px; font-style: italic; color:cornflowerblue; text-align: center; padding: 10px;">
+        </div>
+        <div style="text-align: center;">
+            <input class="btn btn" type="button" value="Copiar" onclick="copiarTexto()" />
+        </div>
+    </div>
+    <footer style="background-color: rgb(24, 23, 23); text-align: center; padding: 10px; margin-top: 10px;">
+        <!-- Rodapé sem informações de redes sociais ou contatos -->
+    </footer>
+</body>
+</html>
